@@ -195,8 +195,6 @@ int run_daemon(const char *config_path) {
     struct data data = { 0 };
     const struct spa_pod *params[1];
     u32 n_params = 0;
-    uint8_t buffer[1024];
-    struct spa_pod_builder b = SPA_POD_BUILDER_INIT(buffer, sizeof(buffer));
     int rc;
 
     data.n_channels = 2;
