@@ -1,0 +1,12 @@
+# Main squigwire config.
+# Presets are defined as:
+#   preset.<name>=/path/to/filters.txt
+# One preset should be selected as default_preset.
+#
+# Filters file format (AutoEQ style):
+#   Preamp: -7.7 dB
+#   Filter 1: ON PK Fc 21 Hz Gain 7.7 dB Q 1.300
+#   ...
+default_preset=ath-m40x
+preset.ath-m40x=~/Downloads/Audio Technica ATH-M40x Filters (Harman 2018 aeoe).txt
+# preset.flat=~/somewhere/flat.txt

@@ -1,0 +1,16 @@
+[Unit]
+Description=Squigwire system-wide PEQ
+Wants=pipewire.service wireplumber.service pipewire-pulse.service
+After=pipewire.service wireplumber.service pipewire-pulse.service
+
+[Service]
+Type=simple
+EnvironmentFile=-%h/.config/squigwire/squigwire.env
+ExecStart=@bindir@/squigwire --daemon
+ExecStartPost=@bindir@/squigwire-route up
+ExecStopPost=@bindir@/squigwire-route down
+Restart=on-failure
+RestartSec=1
+
+[Install]
+WantedBy=default.target
