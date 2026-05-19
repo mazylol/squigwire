@@ -6,9 +6,23 @@ spa_dep = dependency('libspa-0.2', required: true)
 cc = meson.get_compiler('c')
 math_dep = cc.find_library('m', required: true)
 
-src = ['main.c']
+src = [
+  'src/main.c',
+  'src/cli.c',
+  'src/daemon.c',
+  'src/fs.c',
+  'src/util.c',
+  'src/config.c',
+  'src/peq.c',
+  'src/state.c',
+]
 
-executable('squigwire', sources: src, dependencies: [pipewire_dep, spa_dep, math_dep], install: true)
+executable(
+  'squigwire',
+  sources: src,
+  dependencies: [pipewire_dep, spa_dep, math_dep],
+  install: true,
+)
 
 install_data(
   'scripts/squigwire-route.sh',
