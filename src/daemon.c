@@ -254,9 +254,6 @@ int run_daemon(const char *config_path) {
             return 1;
     }
 
-    params[n_params++] = spa_process_latency_build(&b, SPA_PARAM_ProcessLatency,
-                                                   &SPA_PROCESS_LATENCY_INFO_INIT(.ns = 10 * SPA_NSEC_PER_MSEC));
-
     if (pw_filter_connect(data.filter, PW_FILTER_FLAG_RT_PROCESS, params, n_params) < 0) {
         fprintf(stderr, "can't connect\n");
         return 1;
