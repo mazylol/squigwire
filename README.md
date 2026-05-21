@@ -1,4 +1,5 @@
 # squigwire
+Moved to https://codeberg.org/mazylol/squigwire
 
 System-wide PipeWire parametric EQ with:
 - multiband filter loading
